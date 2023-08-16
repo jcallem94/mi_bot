@@ -10,7 +10,7 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f'We have logged in as {bot.user}')
+    print(f'Tu bot está en linea: {bot.user}')
 
 @bot.command()
 async def hello(ctx):
