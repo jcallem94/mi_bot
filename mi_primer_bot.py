@@ -21,6 +21,16 @@ async def heh(ctx, count_heh = 5):
     await ctx.send("he" * count_heh)
 
 @bot.command()
+async def meme(ctx):
+    imagen = random.choice(os.listdir('images'))
+    with open(f'images/{imagen}', 'rb') as f:
+        # ¡Vamos a almacenar el archivo de la biblioteca Discord convertido en esta variable!
+        picture = discord.File(f)
+    # A continuación, podemos enviar este archivo como parámetro.
+    await ctx.send(file=picture)
+
+
+@bot.command()
 async def guess(ctx):
     await ctx.send('Guess a number between 1 and 10.')
 
@@ -40,4 +50,4 @@ async def guess(ctx):
         await ctx.send(f'Oops. It is actually {answer}.')
 
 
-bot.run("MTEzODg2NzUwMzcwODI0MTkzMA.GLj-CC.YP3THTbr6mGrv6bqDtjt3IXTVrxpiinno0p_9M")
+bot.run("Acá va tu token")
